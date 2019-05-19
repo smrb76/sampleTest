@@ -1,0 +1,48 @@
+.container {
+  margin: 5vh 5vw;
+  padding: 5vh 5vw;
+}
+
+.filter-field {
+  width: 30%;
+}
+
+.mat-spinner-color::ng-deep circle {
+  stroke: #760933 !important;
+}
+
+mat-spinner {
+  margin: 5vh auto 5vh auto;
+}
+
+.mat-header-cell {
+  padding-top: 3vh;
+}
+
+.mat-cell {
+  padding-top: 2vh;
+}
+
+.NationalIDNumber-cell {
+  width: 16%;
+}
+
+.login_id_cell {
+  width: 20%;
+}
+
+.Job-title_cell {
+  width: 30%;
+}
+
+.Gender-cell {
+  width: 10%;
+}
+
+.Birth-date-cell {
+  width: 15%;
+}
+
+.HireDate-cell {
+  width: 15%;
+}

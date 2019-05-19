@@ -1,0 +1,22 @@
+<mat-toolbar class="container">
+  <mat-toolbar-row class="row">
+    <div>
+      <a class="logo" routerLink="/home">
+        <i class="logo-type">Sample</i>
+      </a>
+    </div>
+    <div class="header-list">
+      <mat-nav-list class="navigation">
+        <a (click)="logout()" mat-list-item><span>Logout</span></a>
+      </mat-nav-list>
+    </div>
+    <div class="responseMenu">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <i class="fa fa-bars"></i>
+      </button>
+      <mat-menu #menu="matMenu" xPosition="before">
+        <a mat-list-item><span>Logout</span></a>
+      </mat-menu>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

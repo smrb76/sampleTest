@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { RegisterService } from './services/register.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'sampleTest';
+export class AppComponent implements OnInit {
+  constructor(private registerService: RegisterService) { }
+  title = 'sample';
+  ngOnInit(): void {
+    this.registerService.authAutoUser();
+  }
 }

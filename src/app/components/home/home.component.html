@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<div class="container mat-elevation-z8">
+
+  <mat-form-field class="filter-field">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter by every field">
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="NationalIDNumber">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> NationalIDNumber </th>
+      <td class="NationalIDNumber-cell" mat-cell *matCellDef="let element"> {{element.NationalIDNumber}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="LoginID">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> LoginID </th>
+      <td class="login_id_cell" mat-cell *matCellDef="let element"> {{element.LoginID}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="JobTitle">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> JobTitle </th>
+      <td class="Job-title_cell" mat-cell *matCellDef="let element"> {{element.JobTitle}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Gender">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender </th>
+      <td class="Gender-cell" mat-cell *matCellDef="let element"> {{element.Gender}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="BirthDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> BirthDate </th>
+      <td class="Birth-date-cell" mat-cell *matCellDef="let element"> {{element.BirthDate}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="HireDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> HireDate </th>
+      <td class="HireDate-cell" mat-cell *matCellDef="let element"> {{element.HireDate}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[10]" showFirstLastButtons></mat-paginator>
+</div>

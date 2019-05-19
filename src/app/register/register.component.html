@@ -1,0 +1,88 @@
+<header>
+  <a class="logo" routerLink="/home">
+    <i class="logo-type">Sample</i>
+  </a>
+</header>
+<div class="container right-panel-active" id="container">
+
+  <div class="form-container sign-up-container">
+    <div class="sign-up-title">
+      <h1>Sign Up</h1>
+    </div>
+    <form [formGroup]="Registerform" (ngSubmit)="register()">
+      <mat-form-field>
+        <input matInput formControlName="nationalCode" type="text" placeholder="nationalCode" />
+        <mat-error class="error" *ngIf="nationalCode.touched && nationalCode.errors">Your nationalCode is invalid
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput formControlName="firstName" placeholder="firstName" maxlength=100 />
+        <mat-error class="error" *ngIf="firstName.touched && firstName.errors">Your firstName is invalid</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput formControlName="lastName" placeholder="lastName" maxlength=100 />
+        <mat-error class="error" *ngIf="lastName.touched && lastName.errors">Your lastName is invalid</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput formControlName="MobileNumber" maxlength="11" placeholder="Phone number" />
+        <mat-error *ngIf="MobileNumber.touched && MobileNumber.errors">Mobile Number is invalid</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput formControlName="password" minlength=5 maxlength=50 type="password" placeholder="Password" />
+        <mat-error *ngIf="password.touched && password.errors">Your Password is invalid</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput formControlName="confirmPassword" minlength=5 maxlength=50 type="password"
+          placeholder="confirmPassword" />
+        <mat-error *ngIf="confirmPassword.touched && confirmPassword.errors">Your confirm Password is invalid
+        </mat-error>
+      </mat-form-field>
+
+      <button class="signup-Btn" mat-raised-button color="warn" type="submit" [disabled]="Registerform.errors">Create
+        Account</button>
+      <mat-error *ngIf="errorMsgSignup">{{errorMsgSignup}}</mat-error>
+    </form>
+  </div>
+
+  <div class="form-container sign-in-container">
+
+    <div class="sign-in-title">
+      <h1>Login</h1>
+    </div>
+    <form [formGroup]="LoginForm" (ngSubmit)="login()">
+      <mat-form-field>
+        <input matInput formControlName="Username" type="text" placeholder="username" />
+        <mat-error *ngIf="Username.touched && Username.errors">Your username is invalid</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput formControlName="Password" minlength=5 maxlength=50 type="password" placeholder="Password" />
+        <mat-error *ngIf="Password.touched && Password.errors">Your Password is invalid</mat-error>
+      </mat-form-field>
+      <button class="login-btn" mat-raised-button color="warn" type="submit"
+        [disabled]="LoginForm.errors">Login</button>
+      <mat-error class="login-error" *ngIf="errorMsgLogin">{{errorMsgLogin}}</mat-error>
+      <a routerLink="/" class="forget-password">Forgot Password?</a>
+    </form>
+  </div>
+
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Welcome To Sample</h1>
+        <p>It's free</p>
+        <button mat-button class="ghost" id="signIn">Login</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>Create an account And Join Us</h1>
+        <p class="p-title">It`s free</p>
+        <button mat-button class="ghost" id="signUp">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</div>

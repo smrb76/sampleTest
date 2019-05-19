@@ -1,0 +1,92 @@
+.container {
+  background-color: #760933;
+  color: #fff;
+  min-height: 7vh;
+  padding: 0 4vw 0 4vw;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  padding: 6px 3px 3px 3px;
+
+  &:hover,
+  &:visited,
+  &:checked {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .logo-type {
+    font-size: 1.5rem !important;
+    font-weight: 700;
+  }
+}
+
+.header-list {
+  display: flex;
+  align-items: flex-start;
+
+  .navigation {
+    display: flex;
+    flex-direction: row-reverse;
+    user-select: none;
+    padding-top: 0;
+
+    * {
+      margin: 0 4px;
+      color: #fff !important;
+      font-size: .9rem;
+      font-weight: 500;
+      min-width: 70px;
+      text-align: center;
+    }
+  }
+}
+
+.responseMenu {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .container {
+    padding: 0px;
+  }
+
+  .header-list {
+    display: none;
+  }
+
+  .fa-bars {
+    font-size: 1.4rem;
+  }
+
+  .responseMenu {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 890px) {
+  .container {
+    padding: 0;
+  }
+}
+
+// @media only screen and (min-width: 2560px) {
+//   .navigation {
+//     * {
+//       font-size: 1.8rem !important;
+//     }
+//   }
+// }
